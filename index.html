@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <div class="">
+      <p id="textBar" style="border: 1px solid black;">0</p>
+    </div>
+    <div class="">
+      <button onclick="inputNumber();" class="number">1</button>
+      <button onclick="inputNumber();" class="number">2</button>
+      <button onclick="inputNumber();" class="number">3</button>
+    </div>
+    <div class="">
+      <button onclick="inputNumber();" class="number">4</button>
+      <button onclick="inputNumber();" class="number">5</button>
+      <button onclick="inputNumber();" class="number">6</button>
+    </div>
+    <div class="">
+      <button onclick="inputNumber();" class="number">7</button>
+      <button onclick="inputNumber();" class="number">8</button>
+      <button onclick="inputNumber();" class="number">9</button>
+    </div>
+    <div class="">
+      <button onclick="inputNumber();" class="number">0</button>
+      <button>Oblicz</button>
+    </div>
+    <div class="">
+      <button onclick="store(); inputNumber(); calculations.add()" id="add" class="operator">+</button>
+      <button onclick="store(); inputNumber(); calculations.subtract()" id="subtract" class="operator">-</button>
+      <button onclick="store(); inputNumber(); calculations.multiply()" id="multiply" class="operator">*</button>
+      <button onclick="store(); inputNumber(); calculations.divide()" id="divide" class="operator">/</button>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>
