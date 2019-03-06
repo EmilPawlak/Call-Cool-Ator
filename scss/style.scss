@@ -1,0 +1,77 @@
+$background-color: #7fb0ff;
+$calculator-color: #d1d1d1;
+$calculator-width: 70%;
+$display-color: #009b36;
+$main-font: JaneDoe;
+$cool-ator-font: Disposable Droid BB Bold;
+$display-font: Digital-7 Regular;
+body {
+  background-color: $background-color;
+  margin: 0;
+}
+@font-face {
+  font-family: $main-font;
+  src: url(../fonts/janedoe.regular.otf);
+}
+@font-face {
+  font-family: $cool-ator-font;
+  src: url(../fonts/disposabledroid-bb.bold.ttf);
+}
+@font-face {
+  font-family: $display-font;
+  src: url(../fonts/digital-7.regular.ttf);
+}
+
+h1 {
+  text-align: center;
+  font-family: $main-font;
+  font-size: 3rem;
+  margin: 1% 0 1% 0;
+  span {
+    font-family: $cool-ator-font;
+    color: blue;
+  }
+}
+.calculator {
+  background-color: $calculator-color;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: 0 0 0 15%;
+  width: $calculator-width;
+  float: left;
+}
+p {
+  width: 90%;
+  background-color: $display-color;
+  font-size: 2rem;
+  font-family: $display-font;
+  border: 3px solid black;
+  margin: 5% 0 5% 5%;
+}
+.number {
+  width: 50%;
+  text-align: center;
+  margin: 0 0 2.5% 0;
+}
+button {
+  border: 2px solid black;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: #f9f9f9;
+  width: 20%;
+  margin: 1% 1% 1% 5% ;
+}
+#zero {
+  text-align: center;
+}
+#result {
+  border-radius: 0%;
+  width: 50%;
+}
+.number {
+  float: left;
+}
+.operators {
+  width: 50%;
+  float: left;
+}

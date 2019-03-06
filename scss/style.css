@@ -1,0 +1,34 @@
+body {
+  background-color: #7fb0ff; }
+
+@font-face {
+  font-family: JaneDoe;
+  src: url(../fonts/janedoe.regular.otf); }
+@font-face {
+  font-family: Disposable Droid BB Bold;
+  src: url(../fonts/disposabledroid-bb.bold.ttf); }
+@font-face {
+  font-family: Digital-7 Regular;
+  src: url(../fonts/digital-7.regular.ttf); }
+h1 {
+  text-align: center;
+  font-family: JaneDoe; }
+  h1 span {
+    font-family: Disposable Droid BB Bold;
+    color: blue; }
+
+.calculator {
+  background-color: #d1d1d1;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: 0 0 0 15%;
+  width: 70%; }
+  .calculator p {
+    width: 90%;
+    background-color: #009b36;
+    font-size: 2rem;
+    font-family: Digital-7 Regular;
+    border: 3px solid black;
+    margin: 5% 0 5% 5%; }
+
+/*# sourceMappingURL=style.css.map */

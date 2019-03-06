@@ -1,4 +1,66 @@
 body {
-  background-color: #7fb0ff; }
+  background-color: #7fb0ff;
+  margin: 0; }
+
+@font-face {
+  font-family: JaneDoe;
+  src: url(../fonts/janedoe.regular.otf); }
+@font-face {
+  font-family: Disposable Droid BB Bold;
+  src: url(../fonts/disposabledroid-bb.bold.ttf); }
+@font-face {
+  font-family: Digital-7 Regular;
+  src: url(../fonts/digital-7.regular.ttf); }
+h1 {
+  text-align: center;
+  font-family: JaneDoe;
+  font-size: 3rem;
+  margin: 1% 0 1% 0; }
+  h1 span {
+    font-family: Disposable Droid BB Bold;
+    color: blue; }
+
+.calculator {
+  background-color: #d1d1d1;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: 0 0 0 15%;
+  width: 70%;
+  float: left; }
+
+p {
+  width: 90%;
+  background-color: #009b36;
+  font-size: 2rem;
+  font-family: Digital-7 Regular;
+  border: 3px solid black;
+  margin: 5% 0 5% 5%; }
+
+.number {
+  width: 50%;
+  text-align: center;
+  margin: 0 0 2.5% 0; }
+
+button {
+  border: 2px solid black;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: #f9f9f9;
+  width: 20%;
+  margin: 1% 1% 1% 5%; }
+
+#zero {
+  text-align: center; }
+
+#result {
+  border-radius: 0%;
+  width: 50%; }
+
+.number {
+  float: left; }
+
+.operators {
+  width: 50%;
+  float: left; }
 
 /*# sourceMappingURL=style.css.map */

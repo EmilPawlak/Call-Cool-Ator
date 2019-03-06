@@ -1,84 +1,67 @@
 var textBar = document.getElementById('textBar');
-var num1;
-var num2;
 var inputValue;
-function inputNumber() {
-  //By przyciski wypisywły numer w polu
+var num1 = 0;
+var num2 = 0;
+function input() {
   debugger;
+  //By przyciski wypisywły numer w polu
   if (textBar.innerHTML === "0" ||  multiNumber === 1){
-    if (event.target.className === "operator") { //Jesli zostanie klikniety operator miast liczby
-      num1 = 0;
-      num2 = 0;
-    } else {
       textBar.innerHTML = event.target.innerHTML;
       multiNumber = 0;
-    }
   } else {
     textBar.innerHTML += event.target.innerHTML;
   }
 
   //Konwertuj tekst na liczbe
-  if (event.target.className = "number") {
-    textBar.innerHTML = parseInt(textBar.innerHTML);
-    inputValue = parseInt(textBar.innerHTML);
-  }
-}
+  inputValue = parseInt(textBar.innerHTML);
 
-function store (){
   //Zapiuj wprowadzane liczby
-  if (num1 === undefined || operator === undefined) {
-    num1 = inputValue;
-    inputValue = undefined;
+  if (formula !== undefined) {
+    num2 = inputValue;
   } else {
-    if (inputValue === undefined) {
-      num2 = 0;
-      textBar.innerHTML = num1
-    } else {
-      num2 = inputValue;
-    }
+    num1 = inputValue;
   }
 }
-
 //Kalkulacje
 var operator;
 var formula;
-var multiNumber //zmienna pozwalająca wprowadzić kolejne libczy dla danej zmiennej
+var multiNumber; //zmienna pozwalająca wprowadzić kolejne libczy dla danej zmiennej
 
 var calculations = {
   add: function() {
+    debugger;
     multiNumber = 1;
     if (operator !== "+") {
+      //na poczatku gdy operator jeszcze nie jest okreslony
+      if (operator === undefined) {
+      formula = num1 + num2;
+      textBar.innerHTML = formula;
+      num1 = formula;
+      num2 = 0;
       //na poczatku by uniknac wysweitlenia Nan i pozwolic zdobyc num2
-      if (num2 === undefined) {
+    } else if (num2 === undefined) {
         textBar.innerHTML = num1;
-        //na poczatku gdy operator jeszcze nie jest okreslony
-      } else if (operator === undefined) {
-        formula = num1 + num2;
-        textBar.innerHTML = formula;
-        num1 = formula;
         //sprawdza, czy nie jest wykonywane inne dzialanie i je dokańcza
       } else if (operator === "-"){
         formula = num1 - num2;
         textBar.innerHTML = num1 - num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "*"){
         formula = num1 * num2;
         textBar.innerHTML = num1 * num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
       }
-      else if (num1 === "/") {
+      else if (operator === "/") {
         if (num2 === 0) {
           textBar.innerHTML = num1;
         } else {
           formula = num1 / num2;
           textBar.innerHTML = num1 / num2;
           num1 = formula;
-          num2 = undefined;
-          inputValue = undefined;
+          num2 = 0;
         }
       }
       operator = "+";
@@ -87,44 +70,46 @@ var calculations = {
       formula = num1 + num2;
       textBar.innerHTML = formula;
       num1 = formula;
-      num2 = undefined;
-      inputValue = undefined;
+      num2 = 0;
     }
   },
   subtract: function() {
+    debugger;
     multiNumber = 1;
     if (operator !== "-") {
 
-      if (num2 === undefined) {
-        textBar.innerHTML = num1;
-
-      } else if (operator === undefined) {
+      if (operator === undefined) {
+        if (num2 === undefined) {
+          num2 = 0;
+        }
         formula = num1 - num2;
         textBar.innerHTML = formula;
         num1 = formula;
+        num2 = 0;
+
+      } else if (num2 === undefined) {
+        textBar.innerHTML = num1;
 
       } else if (operator === "+"){
         formula = num1 + num2;
         textBar.innerHTML = num1 + num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "*"){
         formula = num1 * num2;
         textBar.innerHTML = num1 * num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
       }
-      else if (num1 === "/") {
+      else if (operator === "/") {
         if (num2 === 0) {
           textBar.innerHTML = num1;
         } else {
           formula = num1 / num2;
           textBar.innerHTML = num1 / num2;
           num1 = formula;
-          num2 = undefined;
-          inputValue = undefined;
+          num2 = 0;
         }
       }
       operator = "-";
@@ -133,11 +118,11 @@ var calculations = {
       formula = num1 - num2;
       textBar.innerHTML = formula;
       num1 = formula;
-      num2 = undefined;
-      inputValue = undefined;
+      num2 = 0;
     }
   },
   multiply: function() {
+    debugger;
     multiNumber = 1;
     if (operator !== "*") {
 
@@ -148,19 +133,20 @@ var calculations = {
         formula = num1 * num2;
         textBar.innerHTML = formula;
         num1 = formula;
+        num2 = 0;
 
       } else if (operator === "+"){
         formula = num1 + num2;
         textBar.innerHTML = num1 + num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "-"){
         formula = num1 - num2;
         textBar.innerHTML = num1 - num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "/"){
         if (num2 === 0) {
           textBar.innerHTML = num1;
@@ -168,8 +154,7 @@ var calculations = {
           formula = num1 / num2;
           textBar.innerHTML = num1 / num2;
           num1 = formula;
-          num2 = undefined;
-          inputValue = undefined;
+          num2 = 0;
         }
       }
       operator = "*";
@@ -178,11 +163,11 @@ var calculations = {
       formula = num1 * num2;
       textBar.innerHTML = formula;
       num1 = formula;
-      num2 = undefined;
-      inputValue = undefined;
+      num2 = 0;
     }
   },
   divide: function() {
+    debugger;
     multiNumber = 1;
     if (operator !== "/") {
 
@@ -196,26 +181,26 @@ var calculations = {
           formula = num1 / num2;
           textBar.innerHTML = formula;
           num1 = formula;
+          num2 = 0;
         }
 
       } else if (operator === "+"){
         formula = num1 + num2;
         textBar.innerHTML = num1 + num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "-"){
         formula = num1 - num2;
         textBar.innerHTML = num1 - num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
+
       } else if (operator === "*"){
         formula = num1 * num2;
         textBar.innerHTML = num1 * num2;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
       }
       operator = "/";
 
@@ -226,13 +211,37 @@ var calculations = {
         formula = num1 / num2;
         textBar.innerHTML = formula;
         num1 = formula;
-        num2 = undefined;
-        inputValue = undefined;
+        num2 = 0;
       }
     }
   }
 }
 //Restart wyświetlacza
-function restart() {
-  textBar.innerHTML = "0";
+function result() {
+  if (operator === "+"){
+    formula = num1 + num2;
+    textBar.innerHTML = num1 + num2;
+    num1 = formula;
+    num2 = 0;
+  } else if (operator === "-"){
+      formula = num1 - num2;
+      textBar.innerHTML = num1 - num2;
+      num1 = formula;
+      num2 = 0;
+
+  } else if (operator === "*"){
+    formula = num1 * num2;
+    textBar.innerHTML = num1 * num2;
+    num1 = formula;
+    num2 = 0;
+  } else if (operator === "/") {
+    if (num2 === 0) {
+      textBar.innerHTML = num1;
+    } else {
+      formula = num1 / num2;
+      textBar.innerHTML = num1 / num2;
+      num1 = formula;
+      num2 = 0;
+    }
+  }
 }
