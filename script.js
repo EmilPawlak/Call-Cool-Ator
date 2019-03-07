@@ -2,8 +2,8 @@ var textBar = document.getElementById('textBar');
 var inputValue;
 var num1 = 0;
 var num2 = 0;
+debugger;
 function input() {
-  debugger;
   //By przyciski wypisywły numer w polu
   if (textBar.innerHTML === "0" ||  multiNumber === 1){
       textBar.innerHTML = event.target.innerHTML;
@@ -29,7 +29,6 @@ var multiNumber; //zmienna pozwalająca wprowadzić kolejne libczy dla danej zmi
 
 var calculations = {
   add: function() {
-    debugger;
     multiNumber = 1;
     if (operator !== "+") {
       //na poczatku gdy operator jeszcze nie jest okreslony
@@ -74,7 +73,6 @@ var calculations = {
     }
   },
   subtract: function() {
-    debugger;
     multiNumber = 1;
     if (operator !== "-") {
 
@@ -122,7 +120,6 @@ var calculations = {
     }
   },
   multiply: function() {
-    debugger;
     multiNumber = 1;
     if (operator !== "*") {
 
@@ -167,7 +164,6 @@ var calculations = {
     }
   },
   divide: function() {
-    debugger;
     multiNumber = 1;
     if (operator !== "/") {
 

@@ -1,20 +1,23 @@
 $background-color: #7fb0ff;
 $calculator-color: #d1d1d1;
-$calculator-width: 70%;
 $display-color: #009b36;
 $main-font: JaneDoe;
-$cool-ator-font: Disposable Droid BB Bold;
+$header-font: Disposable Droid BB Bold;
 $display-font: Digital-7 Regular;
-body {
-  background-color: $background-color;
+
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
+
 @font-face {
   font-family: $main-font;
   src: url(../fonts/janedoe.regular.otf);
 }
 @font-face {
-  font-family: $cool-ator-font;
+  font-family: $header-font;
   src: url(../fonts/disposabledroid-bb.bold.ttf);
 }
 @font-face {
@@ -22,56 +25,130 @@ body {
   src: url(../fonts/digital-7.regular.ttf);
 }
 
-h1 {
-  text-align: center;
-  font-family: $main-font;
-  font-size: 3rem;
-  margin: 1% 0 1% 0;
-  span {
-    font-family: $cool-ator-font;
-    color: blue;
+.content {
+  display: grid;
+  grid-template-columns: [first-col]15% [second-col]70% [third-col]15% [forth-col];
+  grid-template-rows: [first-row]20% [second-row]70% [third-row]10% [forth-row];
+
+  background-color: $background-color;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  .content__title {
+    grid-column: second-col / third-col;
+    grid-row: first-row / forth-row;
+
+    text-align: center;
+    margin: 0;
+    font-family: $main-font;
+    font-size: 3vw;
+
+    .content__title--span{
+      font-family: $header-font;
+      color: blue;
+    }
   }
 }
+
 .calculator {
+  display: grid;
+
+  grid-template-columns: 5% 45% 45% 5%;
+  grid-template-rows: 5% 20% 70% 5%;
+  grid-column: second-col / third-col;
+  grid-row: second-row / third-row;
+
   background-color: $calculator-color;
+
   border: 3px solid black;
   border-radius: 20px;
-  margin: 0 0 0 15%;
-  width: $calculator-width;
-  float: left;
-}
-p {
-  width: 90%;
-  background-color: $display-color;
-  font-size: 2rem;
-  font-family: $display-font;
-  border: 3px solid black;
-  margin: 5% 0 5% 5%;
-}
-.number {
-  width: 50%;
-  text-align: center;
-  margin: 0 0 2.5% 0;
-}
-button {
-  border: 2px solid black;
-  border-radius: 50%;
-  font-size: 2rem;
-  background-color: #f9f9f9;
-  width: 20%;
-  margin: 1% 1% 1% 5% ;
-}
-#zero {
-  text-align: center;
-}
-#result {
-  border-radius: 0%;
-  width: 50%;
-}
-.number {
-  float: left;
-}
-.operators {
-  width: 50%;
-  float: left;
+
+  width: 100%;
+  height: 100%;
+
+  .calculator__display {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+
+    background-color: $display-color;
+    font-size: 2rem;
+    font-family: $display-font;
+    border: 3px solid black;
+
+    .calculator__display--value {
+      font-size: 7vw;
+      margin: 0;
+    }
+  }
+  .calculator__buttons {
+    display: grid;
+    grid-template-columns: 5% 40% 10% 40% 5%;
+    grid-template-rows: 5% 90% 5%;
+
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    .calculator__numbers {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 25% 25% 25% 25%;
+
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      text-align: center;
+      .number-0 {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+      }
+      .calculator__numbers--number {
+
+        border: 0.25vw solid black;
+        border-radius: 50%;
+        font-size: 4vw;
+        background-color: #f9f9f9;
+      }
+    }
+  }
+  .calculator__operators {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+
+    .calculator__operators--operator {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+
+      border: 0.25vw solid black;
+      border-radius: 50%;
+      font-size: 4vw;
+      background-color: #f9f9f9;
+    }
+    #add {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    #subtract {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    #multiply {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    #divide {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    #result {
+      grid-column: 1 / 4;
+      grid-row: 4 / 5;
+
+      border-radius: 0%;
+    }
+  }
 }
