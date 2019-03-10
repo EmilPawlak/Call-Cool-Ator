@@ -36,13 +36,14 @@ html, body {
   padding: 0;
 
   .content__title {
-    grid-column: second-col / third-col;
-    grid-row: first-row / forth-row;
+    grid-column: first-col / forth-col;
+    grid-row: first-row / second-row;
 
     text-align: center;
     margin: 0;
     font-family: $main-font;
     font-size: 3vw;
+    place-self: center stretch;
 
     .content__title--span{
       font-family: $header-font;
@@ -67,9 +68,12 @@ html, body {
   width: 100%;
   height: 100%;
 
+  z-index: 1;
+
   .calculator__display {
     grid-column: 2 / 4;
     grid-row: 2 / 3;
+    display: grid;
 
     background-color: $display-color;
     font-size: 2rem;
@@ -77,6 +81,8 @@ html, body {
     border: 3px solid black;
 
     .calculator__display--value {
+      place-self: center stretch;
+
       font-size: 7vw;
       margin: 0;
     }
