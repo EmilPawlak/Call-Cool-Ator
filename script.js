@@ -7,7 +7,6 @@ var num2;
 
 function input(event) {
   //By przyciski wypisywły numer w polu
-  debugger;
   if (textBar.innerHTML === "0" ||  multiNumber === 1){
       textBar.innerHTML = event.target.innerHTML;
       multiNumber = 0;

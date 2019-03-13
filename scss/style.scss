@@ -104,6 +104,7 @@ html, body {
     .calculator__display--value {
       place-self: center stretch;
 
+      overflow: hidden;
       font-size: 7vw;
       margin: 0;
     }
