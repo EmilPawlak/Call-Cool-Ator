@@ -1,9 +1,13 @@
+'use strict';
+
 var textBar = document.getElementById('textBar');
 var inputValue;
 var num1 = 0;
 var num2;
-function input() {
+
+function input(event) {
   //By przyciski wypisywły numer w polu
+  debugger;
   if (textBar.innerHTML === "0" ||  multiNumber === 1){
       textBar.innerHTML = event.target.innerHTML;
       multiNumber = 0;
@@ -24,7 +28,7 @@ var operator;
 var formula;
 var multiNumber; //zmienna pozwalająca wprowadzić kolejne libczy dla danej zmiennej
 
-var calculations = {
+const CALCULATIONS = {
   add: function() {
     if (num2 === undefined) {
       multiNumber = 1;

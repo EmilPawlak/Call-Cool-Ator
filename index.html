@@ -2,9 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="scss/style.scss">
     <title>Simple Calculator</title>
   </head>
   <body>
@@ -18,22 +17,22 @@
         </div>
         <div class="calculator__buttons">
           <div class="calculator__numbers">
-            <button class="calculator__numbers--number" onclick="input();">1</button>
-            <button class="calculator__numbers--number" onclick="input();">2</button>
-            <button class="calculator__numbers--number" onclick="input();">3</button>
-            <button class="calculator__numbers--number" onclick="input();">4</button>
-            <button class="calculator__numbers--number" onclick="input();">5</button>
-            <button class="calculator__numbers--number" onclick="input();">6</button>
-            <button class="calculator__numbers--number" onclick="input();">7</button>
-            <button class="calculator__numbers--number" onclick="input();">8</button>
-            <button class="calculator__numbers--number" onclick="input();">9</button>
-            <button class="calculator__numbers--number number-0" onclick="input();">0</button>
+            <button class="calculator__numbers--number number-1" onclick="input(event);">1</button>
+            <button class="calculator__numbers--number number-2" onclick="input(event);">2</button>
+            <button class="calculator__numbers--number number-3" onclick="input(event);">3</button>
+            <button class="calculator__numbers--number number-4" onclick="input(event);">4</button>
+            <button class="calculator__numbers--number number-5" onclick="input(event);">5</button>
+            <button class="calculator__numbers--number number-6" onclick="input(event);">6</button>
+            <button class="calculator__numbers--number number-7" onclick="input(event);">7</button>
+            <button class="calculator__numbers--number number-8" onclick="input(event);">8</button>
+            <button class="calculator__numbers--number number-9" onclick="input(event);">9</button>
+            <button class="calculator__numbers--number number-0" onclick="input(event);">0</button>
           </div>
           <div class="calculator__operators" >
-            <button class="calculator__operators--operator" onclick="calculations.add()" id="add">+</button>
-            <button class="calculator__operators--operator" onclick="calculations.subtract()" id="subtract">-</button>
-            <button class="calculator__operators--operator" onclick="calculations.multiply()" id="multiply">x</button>
-            <button class="calculator__operators--operator" onclick="calculations.divide()" id="divide">:</button>
+            <button class="calculator__operators--operator" onclick="CALCULATIONS.add()" id="add">+</button>
+            <button class="calculator__operators--operator" onclick="CALCULATIONS.subtract()" id="subtract">-</button>
+            <button class="calculator__operators--operator" onclick="CALCULATIONS.multiply()" id="multiply">x</button>
+            <button class="calculator__operators--operator" onclick="CALCULATIONS.divide()" id="divide">:</button>
             <button class="calculator__operators--operator" onclick="result()" id="result">Oblicz</button>
           </div>
         </div>
